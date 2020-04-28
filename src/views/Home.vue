@@ -1,18 +1,45 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="nav">
+      飒飒
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import axios from "axios";
+import { onMounted, getCurrentInstance, reactive } from "vue";
 export default {
-  name: 'Home',
+  name: "home",
+  setup() {
+    console.log("获取", getCurrentInstance());
+    const state = reactive({
+      count: 0,
+      value: null
+    });
+    onMounted(() => {
+      axios.get("http://localhost:5555/pim/common/tell").then(res => {
+        console.log(res.result);
+      });
+    });
+
+    return {
+      state,
+      ...useOther
+    };
+  },
   components: {
-    HelloWorld
   }
+};
+ function useOther(){
+       return {
+       }
 }
 </script>
+
+<style lang="less" scoped>
+.nav {
+  font-size: 39px;
+  font-family: "Times New Roman", Times, serif;
+}
+</style>

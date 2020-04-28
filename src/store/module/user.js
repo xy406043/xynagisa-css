@@ -1,5 +1,4 @@
-import Vuex from 'vuex'
-// import user from "./module/user"
+import Vuex from "vuex";
 export default Vuex.createStore({
   state: {
     test: { a: 1 },
@@ -15,6 +14,4 @@ export default Vuex.createStore({
       commit("state", value++);
     },
   },
-  modules: {
-  }
 });

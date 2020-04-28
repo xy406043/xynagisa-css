@@ -1,29 +1,55 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
+import Main from "../views/main.vue";
 
-Vue.use(VueRouter)
-
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/login",
+    name: "login",
+    component: () => import("../views/login-page/login.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/",
+    name: "_home",
+    component: Main,
+    // redirect:"home",
+    children: [
+      {
+        path: "/home",
+        name: "home",
+        component: () => import("../views/Home.vue"),
+      },
+    ],
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: Main,
+    children: [
+      {
+        path: "/test-el",
+        name: "test-el",
+        component: () => import("../views/Test.vue"),
+      },
+    ],
+  },
+];
+
+const router = createRouter({
+  history: createWebHashHistory(process.env.BASE_URL),
+  routes,
+});
+router.beforeEach((to, from, next) => {
+  console.log("from-to", from, to);
+ let token =''
+  if (to.name === "_home" && !token) {
+    next({ name: "login" });
+  } else if(token &&to.name==="_home") {
+    next({name:"home"})
+  }else if( token && to.name==="login"){
+    next({name:"home"})
+  }else {
+    next()
   }
-]
+});
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export default router;
