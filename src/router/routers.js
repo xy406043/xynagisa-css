@@ -67,6 +67,11 @@ const routes = [
         name:"test-gradual",
         component: () =>import("../views/test/gradual.vue")
       },
+      {
+        path:"/test-animation2",
+        name:"test-animation2",
+        component: () =>import("../views/test/real-animation.vue")
+      },
 
     ]
   }

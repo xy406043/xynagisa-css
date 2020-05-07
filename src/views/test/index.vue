@@ -1,9 +1,10 @@
 <template>
     <div class="flex-row">
        <div class="every-r"  @click="toCss">伪元素</div> 
-       <div class="every-r" @click="toAnimaiton">动画</div>
+       <div class="every-r" @click="toAnimaiton">进度条</div>
+       <div class="every-r" @click="toAnimaiton2">动画</div>
        <div class="every-r" @click="toGrid">栅格布局</div>
-       <div class="every-r" @click="toSpecial">动画</div>
+       <div class="every-r" @click="toSpecial">特效</div>
        <div class="every-r" @click="toGradual">渐变</div>
     </div>
     <router-view />
@@ -21,6 +22,9 @@ import{getCurrentInstance} from "vue"
           const toAnimaiton = () =>{
               ctx.$router.push({name:"test-animation"})
           }
+           const toAnimaiton2 = () =>{
+              ctx.$router.push({name:"test-animation2"})
+          }
           const toGrid = () =>{
               ctx.$router.push({name:"test-grid"})
           }
@@ -33,6 +37,7 @@ import{getCurrentInstance} from "vue"
           return {
               toCss,
               toAnimaiton,
+              toAnimaiton2,
               toGrid,
               toSpecial,
               toGradual
