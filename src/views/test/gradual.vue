@@ -43,6 +43,21 @@
         <div class="every-g">棋盘纹理</div>
         <div class="every-9"></div>
         </div>
+         <div>
+        <div class="every-g">线性渐变模拟进度条运动</div>
+        <div class="every-10">
+            <div class="bar"></div>
+<div class="bar overflow"></div>
+        </div>
+        </div>
+         <div>
+        <div class="every-g">棋盘纹理</div>
+        <div class="every-11"></div>
+        </div>
+         <div>
+        <div class="every-g">棋盘纹理</div>
+        <div class="every-12"></div>
+        </div>
     </div>
 </template>
 
@@ -59,7 +74,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 400px 400px 400px;
+        grid-template-rows: 400px 400px 400px 400px;
         grid-gap: 10px;
     }
 </style>
@@ -194,5 +209,44 @@ radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6C
 background-size: 110px 110px;
 background-color: #C8D3A7;
 background-position: 0 0, 55px 55px;
+}
+.every-10{
+    height: 300px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bar {
+    position: relative;
+    width: 400px;
+    height: 30px;
+    border-radius:20px;
+    // border: 1px solid #000;
+    background: #ffba01;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 85px;
+        background: repeating-linear-gradient(45deg, #f06a0e, #f06a0e
+10px, transparent 11px, transparent 19px, #f06a0e 20px);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        animation: move 1s linear infinite;
+    }
+
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+@keyframes move {
+    from { background-position: 0 0; }
+    to { background-position: 0 -56px; }
 }
 </style>

@@ -1,12 +1,14 @@
 <template>
-  <div class="middle">
+  <div class="middle-war">
     <div class="nav">
       <!-- 飒飒 -->
     </div>
     <div id="wraper">
       <div id="phone"></div>
     </div>
+    <div>
     <span class="qipao">你好sasasasa,sa</span>
+    </div>
     <!-- 测试vertical-align -->
     <div class="ver">
       <img class="ver-img" src="http://xynagisa.xyz/search1_1588733974374.png"  />
@@ -51,13 +53,18 @@ function useOther() {
 </script>
 
 <style lang="less" scoped>
+.middle-war{
+  display: grid;
+  grid-template-rows: 300px 300px ;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3,1fr)
+}
 .nav {
   // font-size: 22px;
   // font-family: "Times New Roman", Times, serif;
   position: relative;
   height: 0;
   width: 0;
-  border-top: 100px solid black;
   border-left: 50px solid #1e4fb738;
   border-right: 50px solid #25d03529;
   border-bottom: 100px solid red;
@@ -67,17 +74,11 @@ function useOther() {
   position: absolute;
   height: 0;
   width: 0;
-  border-bottom: 100px solid green;
   border-left: 50px solid rgba(1, 44, 22, 0.2);
   border-right: 50px solid rgba(121,21,45,.1);
   border-top: 100px solid red;
   top: 30px;
   left: -50px;
-}
-.middle {
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 70px;
 }
 //通过：after :before 实现小图标
 #wraper {
