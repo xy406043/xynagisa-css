@@ -3,7 +3,7 @@
         <div class="every-r" @click="toText">文字</div> 
        <div class="every-r" @click="toCss">伪元素</div> 
        <div class="every-r" @click="toAnimaiton2">动画</div>
-       <div class="every-r" @click="toGrid">栅格布局</div>
+       <div class="every-r" @click="toGrid">布局</div>
        <div class="every-r" @click="toSpecial">特效</div>
        <div class="every-r" @click="toGradual">渐变</div>
        <div class="every-r" @click="toShadow">阴影</div>
@@ -12,6 +12,7 @@
        <div class="every-r" @click="toBorder">边框</div>
        <div class="every-r" @click="toClip">裁剪</div>
        <div class="every-r" @click="toThreeD">3D </div>
+       <div class="every-r" @click="toMedia">媒体查询</div>
        <div class="every-r" @click="toMixin">混合模式</div>
        <div class="every-r" @click="toMultiple">综合</div>
     </div>
@@ -63,6 +64,9 @@ import{getCurrentInstance} from "vue"
             const toMixin =() => {
               ctx.$router.push({name:"test-mixin"})
           }
+           const toMedia =() =>{
+               ctx.$router.push({name:"test-media"})
+           }
             const toMultiple =() => {
               ctx.$router.push({name:"test-multiple"})
           }
@@ -85,6 +89,7 @@ import{getCurrentInstance} from "vue"
               toFilter,
               toBorder,
               toMixin,
+              toMedia,
               toMultiple,
               toThreeD,
               toClip

@@ -98,6 +98,11 @@ const routes = [
         component: () =>import("../views/test/mixin.vue")
       },
       {
+        path:"/test-media",
+        name:"test-media",
+        component: () =>import("../views/test/media.vue")
+      },
+      {
         path:"/test-multiple",
         name:"test-multiple",
         component: () =>import("../views/test/multiple.vue")
