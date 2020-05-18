@@ -5,7 +5,10 @@
       <div class="every-1">
         <div
           class="show-ellipse"
-        >回到家，她把两人的事告诉父母，遭到他们的强烈反对。父亲是工厂的老职工，认识他，对他的印象不好，一直就反对他们交往。理由是，他是个不上进的男人，懒散，没事业心，还跟外面社会上一些不务正业的年轻人来往，女人跟了他，以后绝对没有好日子过。尤其现在，工厂效益每况愈下，有能力的人都自己出去单干了，而他还在流水线上混着，一个月只有几百块钱。这样的男人，没前途的。</div>
+        >多行:回到家，她把两人的事告诉父母，遭到他们的强烈反对。父亲是工厂的老职工，认识他，对他的印象不好，一直就反对他们交往。理由是，他是个不上进的男人，懒散，没事业心，还跟外面社会上一些不务正业的年轻人来往，女人跟了他，以后绝对没有好日子过。尤其现在，工厂效益每况愈下，有能力的人都自己出去单干了，而他还在流水线上混着，一个月只有几百块钱。这样的男人，没前途的。</div>
+        <div
+          class="show-ellipse2"
+        >单行:回到家，她把两人的事告诉父母，遭到他们的强烈反对。父亲是工厂的老职工，认识他，对他的印象不好，一直就反对他们交往。理由是，他是个不上进的男人，懒散，没事业心，还跟外面社会上一些不务正业的年轻人来往，女人跟了他，以后绝对没有好日子过。尤其现在，工厂效益每况愈下，有能力的人都自己出去单干了，而他还在流水线上混着，一个月只有几百块钱。这样的男人，没前途的。</div>
       </div>
     </div>
     <div>
@@ -73,7 +76,6 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-
 .grid {
   display: grid;
   grid-gap: 10px;
@@ -81,7 +83,7 @@ export default {};
   grid-template-columns: repeat(3, 1fr);
 }
 .every-a:before {
-  content: "\1F6B3";
+  content: "\1F3AB";
 }
 .every-1 {
   height: 300px;
@@ -90,9 +92,10 @@ export default {};
   justify-content: center;
   align-items: center;
   position: relative;
+
 }
 .show-ellipse {
-  width: 200px; //微信小程序版本
+  width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   word-wrap: break-word;
@@ -100,8 +103,19 @@ export default {};
   -webkit-line-clamp: 2;
   display: -webkit-box; //不是小程序可以不用？
   -webkit-box-orient: vertical;
+  &::first-letter{  // 不生效
+    font-size: 30px;
+  }
 }
-
+.show-ellipse2 {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   &::first-letter{
+    font-size: 30px;
+  }
+}
 .every-2 {
   height: 300px;
   width: 450px;
@@ -206,17 +220,33 @@ export default {};
   }
   .wave2::before {
     position: absolute;
-    content:'';
+    content: "";
     height: 5px;
-    width:100%;
+    width: 100%;
     left: 0;
-    top:18px;
-    background-image:linear-gradient(315deg,transparent ,transparent 45% ,green 45%,green 55%,transparent 55%,transparent),
-    linear-gradient(45deg,transparent ,transparent 45% ,green 45%,green 55%,transparent 55%,transparent);
-    background-size:10px 10px ;
+    top: 18px;
+    background-image: linear-gradient(
+        315deg,
+        transparent,
+        transparent 45%,
+        green 45%,
+        green 55%,
+        transparent 55%,
+        transparent
+      ),
+      linear-gradient(
+        45deg,
+        transparent,
+        transparent 45%,
+        green 45%,
+        green 55%,
+        transparent 55%,
+        transparent
+      );
+    background-size: 10px 10px;
     animation: animal-wave 3s linear infinite;
   }
-  @keyframes animal-wave{
+  @keyframes animal-wave {
     // from{
     //   transform:translateX(0)
     // }

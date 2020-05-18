@@ -1,8 +1,13 @@
 <template>
   <div class="grid">
     <div>
-      <div class="every-a">立体阴影条纹字</div>
-      <div class="every-1" data-name="Solid Shadow Word">Solid Shadow Word</div>
+      <div class="every-a">图形</div>
+      <div class="every-1">
+        <div class="show1"></div>
+        <div class="show2"></div>
+        <div class="show3"></div>
+        <div class="show4"></div>
+      </div>
     </div>
     <div>
       <div class="every-a">半透明遮罩</div>
@@ -70,7 +75,7 @@ export default {};
   grid-template-columns: repeat(3, 1fr);
 }
 .every-a:before {
-  content: "\1F4A8";
+  content: "\1F300";
 }
 .every-1 {
   height: 300px;
@@ -79,6 +84,87 @@ export default {};
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  .show1 {
+    height: 0;
+    width: 0;
+    border-top: 30px solid rgb(255, 0, 255);
+    border-right: 30px solid rgb(109, 128, 0);
+    border-bottom: 30px solid rgb(0, 247, 255);
+    border-left: 30px solid rgb(0, 255, 149);
+  }
+  .show2 {
+    margin-left: 10px;
+    width: 50px;
+    height: 0;
+    border-top: 30px solid rgb(255, 153, 0);
+    border-right: 30px solid rgb(126, 128, 0);
+    border-bottom: 30px solid rgb(0, 255, 42);
+    border-left: 30px solid rgb(0, 247, 255);
+  }
+  .show3 {
+    // font-size: 22px;
+    // font-family: "Times New Roman", Times, serif;
+    position: relative;
+    height: 0;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+  }
+  .show3::after {
+    content: ""; //:after ::before 必须有 content属性
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+    top: 30px;
+    left: -50px;
+  }
+  .show4 {
+    width: 96px;
+    height: 48px;
+    background-color: #fff;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+    animation: show-yingyang 3s linear infinite;
+  }
+  @keyframes show-yingyang {
+    0%{
+      transform: rotate(0deg);
+    }
+
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  .show4:before {
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 0;
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    border: 18px solid black;
+    border-radius: 100%;
+  }
+  .show4:after {
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    border: 18px solid #fff;
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+  }
 }
 .every-2 {
   height: 300px;

@@ -72,7 +72,7 @@ export default {};
   grid-template-columns: repeat(3, 1fr);
 }
 .every-a:before {
-  content: "\1F4A8";
+  content: "\1F30A";
 }
 .every-1 {
   height: 300px;

@@ -1,7 +1,7 @@
 <template>
     <div class="flex-row every-G">
         <div class="every-r" @click="toText">文字</div> 
-       <div class="every-r" @click="toCss">伪元素</div> 
+       <!-- <div class="every-r" @click="toCss">伪类/元素</div>  -->
        <div class="every-r" @click="toAnimaiton2">动画</div>
        <div class="every-r" @click="toGrid">布局</div>
        <div class="every-r" @click="toSpecial">特效</div>

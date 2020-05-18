@@ -26,19 +26,34 @@
 @myPercent:50%;
 @myColor:rgb(80, 170, 230);
 @myColor2: rgb(89,190,12,.8);
+
 .progress2{
         height:30px;
         background-color:silver ;
         border-radius: 30px;
-        background-image: radial-gradient(closest-side circle at @myPercent,@myColor,@myColor 100%,transparent),linear-gradient(90deg,@myColor2,@myColor) ;
+        // background-image: radial-gradient(closest-side circle at @myPercent,@myColor,@myColor 100%,transparent),linear-gradient(90deg,@myColor2,@myColor) ;
+        background-image: linear-gradient(90deg,@myColor2,@myColor) ;
         background-repeat: no-repeat;
-        background-size:   100%,@myPercent;  //','表示的是 全部100%只展示设置的百分比
+        border:1px solid green;
+        // background-size:   100%,@myPercent;  //','表示的是 全部100%只展示设置的百分比
+        animation :show-progress 3s cubic-bezier(0.69, 1.24, 1, 1) ;
 }
+@keyframes show-progress {
+    from{
+        clip-path:polygon(0 0,1px 0,1px 100%, 0 100%)
+    }
+    to{
+        clip-path: polygon(0 0, @myPercent 0,@myPercent 100%,0 100%);
+    }
+}
+
 .progress4{
         height:30px;
         background-color:silver ;
         border-radius: 30px;
+        // background-image: radial-gradient(closest-side circle at 0%,@myColor,@myColor 100%,transparent),linear-gradient(90deg,@myColor2,@myColor) ;
         background-image: radial-gradient(closest-side circle at 0%,@myColor,@myColor 100%,transparent),linear-gradient(90deg,@myColor2,@myColor) ;
+
         background-repeat: no-repeat;
         background-size:   100%,0%;  //','表示的是 全部100%只展示设置的百分比
         animation: move2 1.5s linear;
