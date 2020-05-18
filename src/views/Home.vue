@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <div class="nav">
-      飒飒
-    </div>
+  <div class="middle">
+  saksalk
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import { articleApi } from "../api";
 import { onMounted, getCurrentInstance, reactive } from "vue";
 export default {
   name: "home",
@@ -18,7 +16,8 @@ export default {
       value: null
     });
     onMounted(() => {
-      axios.get("http://localhost:5555/pim/common/tell").then(res => {
+      let p = {};
+      articleApi.getGroupList(p).then(res => {
         console.log(res.result);
       });
     });
@@ -28,18 +27,13 @@ export default {
       ...useOther
     };
   },
-  components: {
-  }
+  components: {}
 };
- function useOther(){
-       return {
-       }
+function useOther() {
+  return {};
 }
 </script>
 
 <style lang="less" scoped>
-.nav {
-  font-size: 39px;
-  font-family: "Times New Roman", Times, serif;
-}
+
 </style>
