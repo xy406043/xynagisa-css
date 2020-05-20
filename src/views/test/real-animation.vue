@@ -247,17 +247,17 @@ export default {};
 
   .rotate,
   .reverseRotate {
-    width: 50vh;
-    height: 50vh;
+    width: 200px;
+    height: 200px;
   }
 
   .content {
     width: 100%;
     height: 100%;
-    line-height: 50vh;
+    line-height: 30px;
     text-align: center;
     background-color: rgba(255, 100, 100, 0.8);
-    font-size: 5vh;
+    font-size: 30px;
     color: #fff;
     box-shadow: 0px 0px 8px 2px rgba(100, 100, 100, 0.6);
   }

@@ -6,13 +6,12 @@ const router = createRouter({
   routes,
 });
 router.beforeEach((to, from, next) => {
-  console.log("from-to", from, to);
+  // console.log("from-to", from, to);
   if (to.name === "_home" ) {
     next({ name: "test-css" });
   }else {
     next()
   }
-  next()
 });
 
 export default router;

@@ -95,12 +95,9 @@ export default {};
   overflow: hidden;
   .loading {
     position: absolute;
-    left: 50%;
-    top: 30vh;
-    margin-left: -20vh;
     display: block;
-    width: 40vh;
-    height: 40vh;
+    width: 100px;
+    height: 100px;
     text-align: center;
     filter: contrast(1.2);
 

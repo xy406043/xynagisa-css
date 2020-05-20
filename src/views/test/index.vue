@@ -17,6 +17,7 @@
        <div class="every-r" @click="toMultiple">综合</div>
     </div>
     <div class="every-P flex-row">
+    <div class="every-r" @click="toFigure">图形</div>
       <div class="every-r" @click="toAnimaiton">进度条</div>
     </div>
     <router-view />
@@ -76,6 +77,9 @@ import{getCurrentInstance} from "vue"
            const toClip =() => {
               ctx.$router.push({name:"test-clip"})
           }
+          const toFigure  =() => {
+              ctx.$router.push({name:"test-figure"})
+          }
           return {
               toText,
               toCss,
@@ -92,7 +96,8 @@ import{getCurrentInstance} from "vue"
               toMedia,
               toMultiple,
               toThreeD,
-              toClip
+              toClip,
+              toFigure
           }
       }
     }

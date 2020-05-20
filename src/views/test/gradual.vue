@@ -40,8 +40,12 @@
         <div class="every-8"></div>
         </div>
          <div>
-        <div class="every-g">棋盘纹理</div>
-        <div class="every-9"></div>
+        <div class="every-g">半截图形</div>
+        <div class="every-9">
+           <div class="layer">
+           <div class="layer2"></div>
+           </div>
+        </div>
         </div>
          <div>
         <div class="every-g">线性渐变模拟进度条运动</div>
@@ -209,6 +213,27 @@ radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6C
 background-size: 110px 110px;
 background-color: #C8D3A7;
 background-position: 0 0, 55px 55px;
+}
+.every-9{
+    height: 200px;
+    width:200px;
+    background:linear-gradient(black,black)
+}
+.layer{
+    width:inherit;
+    height:inherit;
+    background: radial-gradient(circle at 50% 50%,white 0, white 49px,black 49px,black 100%) ;
+    // background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+.layer2{
+     width:100px;
+    height:100px;
+    border-radius:50%;
+    transform: translate(50%,50%);
+    // background: radial-gradient(ellipse at center, rgba(7,7,7,0) 0%, rgba(3,3,3,0) 50%, rgba(2,2,2,1) 51%, rgba(0,0,0,1) 100%);
+
+    background:linear-gradient(white 50%,black 50%,black 100%)
+
 }
 .every-10{
     height: 300px;

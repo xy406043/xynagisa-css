@@ -18,8 +18,8 @@
     </div>
     <div>
       <div class="every-t">行星移动</div>
-      <div class="main">
-        <div class="main-outer">
+      <div class="this-show">
+        <div class="this-show-outer">
           <p class="foot"></p>
         </div>
       </div>
@@ -52,6 +52,7 @@ export default {};
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 300px);
+  grid-gap:20px;
 }
 .btn-container {
   display: flex;
@@ -67,14 +68,14 @@ export default {};
 }
 
 // 行星
-.main {
+.this-show {
   height: 100px;
   width: 150px;
   border: 1px solid aqua;
   border-radius: 50%;
   position: relative;
   margin: 20px;
-  .main-outer {
+  .this-show-outer {
     position: absolute;
     left: 50%;
     top: 50%;

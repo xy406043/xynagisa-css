@@ -122,6 +122,11 @@ const routes = [
         name:"test-text",
         component: () =>import("../views/test/text.vue")
       },
+      {
+        path:"/test-figure",
+        name:"test-figure",
+        component: () =>import("../views/effect/figure.vue")
+      },
 
     ]
   }
